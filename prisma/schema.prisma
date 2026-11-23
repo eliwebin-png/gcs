@@ -1,0 +1,321 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("ADMIN") // SUPER_ADMIN, ADMIN, EDITOR
+  avatar    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SchoolInfo {
+  id               String   @id @default(cuid())
+  schoolName       String   @default("YOUR PUBLIC SCHOOL")
+  tagline          String   @default("Nurturing Minds, Building Futures")
+  logoUrl          String?
+  phone1           String   @default("+91 98765 43210")
+  phone2           String   @default("+91 11223 45678")
+  email            String   @default("info@yourpublicschool.edu.in")
+  admissionEmail   String   @default("admissions@yourpublicschool.edu.in")
+  address          String   @default("123 Education Avenue, Knowledge City, New Delhi - 110001")
+  workingHours     String   @default("Mon - Sat: 8:00 AM - 4:00 PM")
+  affiliationBoard String   @default("CBSE Affiliated")
+  affiliationNo    String   @default("CBSE/AFF/2024/983421")
+  schoolCode       String   @default("84920")
+  principalName    String   @default("Dr. Sunita Sharma")
+  directorName     String   @default("Shri Rajesh V. Verma")
+  establishedYear  String   @default("1995")
+  facebookUrl      String   @default("https://facebook.com")
+  instagramUrl     String   @default("https://instagram.com")
+  youtubeUrl       String   @default("https://youtube.com")
+  linkedinUrl      String   @default("https://linkedin.com")
+  twitterUrl       String   @default("https://twitter.com")
+  whatsappNumber   String   @default("+919876543210")
+  mapEmbedUrl      String?
+  updatedAt        DateTime @updatedAt
+}
+
+model HeroSlide {
+  id          String   @id @default(cuid())
+  badge       String   @default("Admissions Open 2025-26")
+  heading     String   @default("Building Bright Futures Through Quality Education")
+  subheading  String   @default("Empowering students through academic excellence, innovation, leadership, and values in a nurturing learning environment.")
+  imageUrl    String   @default("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop")
+  primaryCtaText String @default("Apply Now")
+  primaryCtaLink String @default("/admissions")
+  secondaryCtaText String @default("Virtual Tour")
+  secondaryCtaLink String @default("/infrastructure")
+  isActive    Boolean  @default(true)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+}
+
+model StatCounter {
+  id          String   @id @default(cuid())
+  label       String
+  value       String
+  iconName    String
+  colorClass  String   @default("blue")
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+}
+
+model AboutSection {
+  id          String   @id @default(cuid())
+  badge       String   @default("ABOUT OUR SCHOOL")
+  title       String   @default("Inspiring Excellence. Nurturing Tomorrow's Leaders.")
+  description String
+  imageUrl    String   @default("https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1000&auto=format&fit=crop")
+  vision      String   @default("To be a leading institution that inspires and empowers students to shape the future.")
+  mission     String   @default("To provide quality education that fosters creativity, critical thinking and character.")
+  values      String   @default("Integrity, Respect, Excellence, Empathy and Responsibility guide everything we do.")
+  yearsExp    String   @default("30+")
+  updatedAt   DateTime @updatedAt
+}
+
+model WhyChooseUsItem {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  iconName    String
+  colorTheme  String   @default("blue")
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+}
+
+model AcademicProgram {
+  id          String   @id @default(cuid())
+  title       String   // Pre Primary, Primary, Middle School, Secondary, Senior Secondary
+  ageGroup    String   // Age 2.5 - 5 Years, Grade I - V, etc.
+  description String
+  iconImage   String   // Illustration/icon url
+  slug        String   @unique
+  curriculum  String?
+  eligibility String?
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+}
+
+model Facility {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  imageUrl    String
+  iconName    String?
+  order       Int      @default(0)
+  isFeatured  Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model GalleryCategory {
+  id        String         @id @default(cuid())
+  name      String         @unique
+  slug      String         @unique
+  images    GalleryImage[]
+  createdAt DateTime       @default(now())
+}
+
+model GalleryImage {
+  id          String           @id @default(cuid())
+  title       String
+  caption     String?
+  imageUrl    String
+  categoryId  String
+  category    GalleryCategory  @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  isFeatured  Boolean          @default(false)
+  createdAt   DateTime         @default(now())
+}
+
+model Video {
+  id          String   @id @default(cuid())
+  title       String
+  embedUrl    String
+  thumbnailUrl String?
+  description String?
+  createdAt   DateTime @default(now())
+}
+
+model Achievement {
+  id          String   @id @default(cuid())
+  title       String
+  subtitle    String
+  description String?
+  category    String   // Academics, Sports, Arts, Olympiads
+  iconColor   String   @default("emerald")
+  iconName    String   @default("Award")
+  year        String?  @default("2024-25")
+  studentName String?
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+}
+
+model Testimonial {
+  id          String   @id @default(cuid())
+  name        String
+  role        String   // Parent, Grade VIII Student, Alumni
+  message     String
+  rating      Int      @default(5)
+  avatarUrl   String?
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model News {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  summary     String
+  content     String
+  thumbnail   String
+  publishDate DateTime @default(now())
+  author      String   @default("Principal's Desk")
+  isPublished Boolean  @default(true)
+  isFeatured  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Event {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  description String
+  thumbnail   String
+  location    String   @default("School Main Auditorium / Ground")
+  eventDate   DateTime
+  time        String   @default("09:00 AM - 02:00 PM")
+  regLink     String?
+  status      String   @default("UPCOMING") // UPCOMING, COMPLETED, CANCELLED
+  isFeatured  Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model Notice {
+  id          String    @id @default(cuid())
+  title       String
+  description String?
+  fileUrl     String?
+  publishDate DateTime  @default(now())
+  expiryDate  DateTime?
+  isPinned    Boolean   @default(false)
+  category    String    @default("General") // General, Academics, Examination, Holiday, Sports
+  createdAt   DateTime  @default(now())
+}
+
+model DownloadItem {
+  id          String   @id @default(cuid())
+  title       String
+  category    String   // Prospectus, Admission Form, Syllabus, Holiday List, Circulars, Results
+  fileUrl     String
+  fileSize    String   @default("2.4 MB")
+  fileType    String   @default("PDF")
+  createdAt   DateTime @default(now())
+}
+
+model FAQ {
+  id        String   @id @default(cuid())
+  question  String
+  answer    String
+  category  String   @default("Admissions")
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String
+  subject   String?  @default("Inquiry")
+  message   String
+  status    String   @default("NEW") // NEW, READ, REPLIED
+  replyText String?
+  createdAt DateTime @default(now())
+}
+
+model AdmissionInquiry {
+  id            String   @id @default(cuid())
+  studentName   String
+  parentName    String
+  email         String
+  phone         String
+  gradeApplying String
+  prevSchool    String?
+  message       String?
+  status        String   @default("PENDING") // PENDING, CONTACTED, ADMITTED, REJECTED
+  createdAt     DateTime @default(now())
+}
+
+model FacultyMember {
+  id            String   @id @default(cuid())
+  name          String
+  designation   String   // PGT Mathematics, HOD Science, PRT English
+  department    String   // Science, Humanities, Mathematics, Sports, Arts
+  qualification String
+  experience    String
+  photoUrl      String
+  email         String?
+  order         Int      @default(0)
+  createdAt     DateTime @default(now())
+}
+
+model PrincipalMessage {
+  id            String   @id @default(cuid())
+  principalName String   @default("Dr. Sunita Sharma")
+  qualification String   @default("M.Sc., M.Ed., Ph.D. in Educational Leadership")
+  message       String
+  photoUrl      String
+  signatureUrl  String?
+  updatedAt     DateTime @updatedAt
+}
+
+model DirectorMessage {
+  id            String   @id @default(cuid())
+  directorName  String   @default("Shri Rajesh V. Verma")
+  designation   String   @default("Managing Director & Trustee")
+  message       String
+  photoUrl      String
+  updatedAt     DateTime @updatedAt
+}
+
+model MandatoryDisclosure {
+  id          String   @id @default(cuid())
+  title       String
+  documentNo  String?
+  fileUrl     String
+  category    String   @default("General Information") // General Information, Documents & Information, Results & Academics, Staff & Infrastructure
+  updatedAt   DateTime @updatedAt
+}
+
+model MediaFile {
+  id        String   @id @default(cuid())
+  name      String
+  url       String
+  size      Int
+  mimeType  String
+  folder    String   @default("general")
+  createdAt DateTime @default(now())
+}
+
+model VisitorLog {
+  id        String   @id @default(cuid())
+  pagePath  String
+  ipHash    String?
+  userAgent String?
+  createdAt DateTime @default(now())
+}
