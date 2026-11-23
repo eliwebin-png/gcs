@@ -148,11 +148,11 @@ export default function HeroSection({
 
   return (
     <section
-      className="relative min-h-[520px] sm:min-h-[580px] lg:min-h-[660px] flex items-center pt-8 sm:pt-16 pb-14 sm:pb-20 overflow-hidden bg-slate-50 group"
+      className="relative min-h-[560px] xs:min-h-[600px] sm:min-h-[640px] lg:min-h-[660px] flex flex-col justify-end lg:justify-center pt-16 sm:pt-20 lg:pt-16 pb-8 sm:pb-12 lg:pb-20 overflow-hidden bg-slate-950 group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Background Image: 100% visible with full natural clarity */}
+      {/* Background Image: Full cover with object-top so faces & banner stay visible at top */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {activeSlidesList.map((slide, idx) => (
           <div
@@ -168,26 +168,26 @@ export default function HeroSection({
                 (e.target as HTMLImageElement).src =
                   "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop";
               }}
-              className="w-full h-full object-cover object-center scale-105 filter brightness-100 contrast-100"
+              className="w-full h-full object-cover object-top filter brightness-[1.02] contrast-[1.02]"
             />
           </div>
         ))}
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8">
+      {/* Main Content: Placed at lower area of image on mobile, centered on desktop */}
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div
           className={`grid grid-cols-1 ${
-            showHeroStats ? "lg:grid-cols-12 gap-8 lg:gap-12" : "max-w-3xl"
+            showHeroStats ? "lg:grid-cols-12 gap-6 lg:gap-12" : "max-w-3xl"
           } items-center`}
         >
 
-          {/* Left Column: Compact & Transparent Frosted Glassmorphism Card */}
-          <div className={`${showHeroStats ? "lg:col-span-7" : "w-full"} flex justify-start`}>
+          {/* Left Column: Transparent Frosted Glass Card (Same beautiful blur & transparency on mobile and desktop) */}
+          <div className={`${showHeroStats ? "lg:col-span-7" : "w-full"} flex justify-center lg:justify-start`}>
             <div
               className={`w-full ${
                 showHeroStats ? "max-w-lg lg:max-w-xl" : "max-w-2xl"
-              } p-5 sm:p-6 lg:p-7 rounded-2xl bg-white/40 backdrop-blur-md border border-white/60 shadow-xl shadow-slate-900/10 space-y-3.5 text-left`}
+              } p-5 sm:p-6 lg:p-7 rounded-2xl sm:rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 shadow-xl shadow-slate-900/10 space-y-3 sm:space-y-3.5 text-left`}
             >
               {currentSlide.badge && (
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50/90 text-blue-700 text-[11px] font-bold border border-blue-200/80 shadow-2xs">
@@ -197,7 +197,7 @@ export default function HeroSection({
 
               <h1
                 key={currentIndex}
-                className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 leading-[1.2] tracking-tight drop-shadow-2xs animate-in fade-in slide-in-from-left-4 duration-500"
+                className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 leading-[1.25] tracking-tight drop-shadow-2xs animate-in fade-in slide-in-from-left-4 duration-500"
               >
                 {renderStyledHeading(currentSlide.heading)}
               </h1>
@@ -210,7 +210,7 @@ export default function HeroSection({
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3 pt-1">
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-1">
                 <Link
                   href={currentSlide.primaryCtaLink || "/admissions"}
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-md shadow-blue-600/25 hover:shadow-lg hover:shadow-blue-600/35 hover:scale-105 active:scale-95 transition-all duration-200"
@@ -252,7 +252,7 @@ export default function HeroSection({
                     <Trophy className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-black text-slate-900">30 Years</h4>
+                    <h4 className="text-base sm:text-lg font-black text-slate-900">20+ Years</h4>
                     <p className="text-[11px] font-medium text-slate-600">Academic Excellence</p>
                   </div>
                 </div>
@@ -263,8 +263,8 @@ export default function HeroSection({
                     <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-black text-slate-900">CBSE</h4>
-                    <p className="text-[11px] font-medium text-slate-600">Curriculum (K-12)</p>
+                    <h4 className="text-base sm:text-lg font-black text-slate-900">JAM/PR-29</h4>
+                    <p className="text-[11px] font-medium text-slate-600">Recognized Curriculum</p>
                   </div>
                 </div>
 
@@ -286,7 +286,7 @@ export default function HeroSection({
         </div>
       </div>
 
-      {/* ================= SLIDER ARROWS ================= */}
+      {/* ================= SLIDER ARROWS & DESKTOP DOTS ================= */}
       {activeSlidesList.length > 1 && (
         <>
           {/* Left Arrow (Desktop / Tablet) */}
@@ -307,8 +307,8 @@ export default function HeroSection({
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
-          {/* Slide Indicator Dots / Progress Pills */}
-          <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
+          {/* Slide Indicator Dots (Mobile & Desktop) */}
+          <div className="absolute bottom-2 sm:bottom-4 lg:bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
             {activeSlidesList.map((_, idx) => (
               <button
                 key={idx}
