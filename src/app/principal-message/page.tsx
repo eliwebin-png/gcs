@@ -79,7 +79,7 @@ export default async function PrincipalMessagePage() {
 
               <div className="prose prose-slate max-w-none text-slate-700 text-base sm:text-lg leading-relaxed space-y-4">
                 <p>
-                  {msg?.message || "Welcome to Your Public School! For over three decades, our endeavor has been to kindle the fire of curiosity, build ethical foundations, and foster excellence in every child. We nurture thinkers, innovators, and empathetic human beings who lead the world with confidence and compassion."}
+                  {msg?.message || "Welcome to Gidhaur Central School! Established in 2005 in Gidhaur, Jamui (Bihar), our endeavor has been to kindle the fire of curiosity, build ethical foundations, and foster excellence in every child under our core motto 'Duty • Devotion • Discipline'. We nurture thinkers, innovators, and empathetic human beings who lead the world with confidence and compassion."}
                 </p>
                 <p>
                   In a rapidly evolving global landscape, education must transcend conventional rote memorization. We empower our learners with computational thinking, experiential science experiments, eloquent communication skills, and emotional resilience.
@@ -91,8 +91,8 @@ export default async function PrincipalMessagePage() {
 
               <div className="pt-6 border-t border-slate-100">
                 <p className="text-sm font-bold text-slate-900">Warm Regards,</p>
-                <p className="text-base font-black text-blue-600 mt-0.5">{msg?.principalName || "Dr. Sunita Sharma"}</p>
-                <p className="text-xs text-slate-500">Principal, Your Public School</p>
+                <p className="text-base font-black text-blue-600 mt-0.5">{msg?.principalName || "Principal"}</p>
+                <p className="text-xs text-slate-500">Principal, Gidhaur Central School</p>
               </div>
             </div>
 

@@ -13,7 +13,7 @@ async function main() {
     update: { password: hashedPassword },
     create: {
       username: "admin",
-      email: "admin@yourpublicschool.edu.in",
+      email: "admin@gidhaurcentralschool.com",
       password: hashedPassword,
       name: "Principal Administration",
       role: "SUPER_ADMIN",
@@ -38,27 +38,27 @@ async function main() {
   await prisma.schoolInfo.deleteMany();
   await prisma.schoolInfo.create({
     data: {
-      schoolName: "YOUR PUBLIC SCHOOL",
-      tagline: "Nurturing Minds, Building Futures",
-      logoUrl: "/images/logo.png",
-      phone1: "+91 98765 43210",
-      phone2: "+91 11223 45678",
-      email: "info@yourpublicschool.edu.in",
-      admissionEmail: "admissions@yourpublicschool.edu.in",
-      address: "123 Education Avenue, Knowledge City, New Delhi - 110001",
-      workingHours: "Mon - Sat: 8:00 AM - 4:00 PM",
-      affiliationBoard: "CBSE Curriculum (Affiliation No: 2130849)",
-      affiliationNo: "CBSE/AFF/2024/983421",
-      schoolCode: "84920",
-      principalName: "Dr. Sunita Sharma",
-      directorName: "Shri Rajesh V. Verma",
-      establishedYear: "1995",
+      schoolName: "Gidhaur Central School",
+      tagline: "Duty • Devotion • Discipline",
+      logoUrl: "/images/gidhaur-logo.png",
+      phone1: "+91 8409254393",
+      phone2: "+91 9934485443",
+      email: "info@gidhaurcentralschool.com",
+      admissionEmail: "admissions@gidhaurcentralschool.com",
+      address: "Vill- Gidhaur, Post- Gidhaur, Dist- Jamui - Pin: 811305, Jamui, Bihar",
+      workingHours: "Mon - Sat: 8:00 AM - 3:30 PM",
+      affiliationBoard: "Reg No. JAM/PR-29 (ESTD- 2005)",
+      affiliationNo: "JAM/PR-29",
+      schoolCode: "JAM-29",
+      principalName: "Principal, GCS",
+      directorName: "Director, GCS",
+      establishedYear: "2005",
       facebookUrl: "https://facebook.com",
       instagramUrl: "https://instagram.com",
       youtubeUrl: "https://youtube.com",
       linkedinUrl: "https://linkedin.com",
       twitterUrl: "https://twitter.com",
-      whatsappNumber: "+919876543210",
+      whatsappNumber: "+918409254393",
     },
   });
 
@@ -115,7 +115,7 @@ async function main() {
       },
       {
         label: "Years of Excellence",
-        value: "30",
+        value: "20+",
         iconName: "Trophy",
         colorClass: "amber",
         order: 3,
@@ -145,13 +145,13 @@ async function main() {
   await prisma.aboutSection.create({
     data: {
       badge: "ABOUT OUR SCHOOL",
-      title: "Inspiring Excellence. Nurturing Tomorrow's Leaders.",
-      description: "At Your Public School, we believe every child is unique and has the potential to achieve greatness. Our holistic approach to education blends academics, co-curricular activities, and life skills to develop confident, compassionate, and responsible individuals.",
+      title: "Gidhaur Central School - Duty, Devotion & Discipline",
+      description: "At Gidhaur Central School, established in 2005 in Gidhaur, Jamui (Bihar), we believe in nurturing young minds with foundational academic excellence, moral integrity, and character building. Guided by our motto 'Duty • Devotion • Discipline', we prepare students for a bright and purposeful future.",
       imageUrl: "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1000&auto=format&fit=crop",
-      vision: "To be a leading institution that inspires and empowers students to shape the future.",
-      mission: "To provide quality education that fosters creativity, critical thinking and character.",
-      values: "Integrity, Respect, Excellence, Empathy and Responsibility guide everything we do.",
-      yearsExp: "30+",
+      vision: "To cultivate intellectually vibrant, morally upright, and socially responsible citizens through accessible quality education.",
+      mission: "To provide an enriching learning environment that fosters academic curiosity, ethical values, and holistic physical development.",
+      values: "Duty, Devotion, Discipline, Integrity, and Compassion guide everything we do.",
+      yearsExp: "20+",
     },
   });
 
@@ -605,9 +605,9 @@ async function main() {
   await prisma.principalMessage.deleteMany();
   await prisma.principalMessage.create({
     data: {
-      principalName: "Dr. Sunita Sharma",
-      qualification: "M.Sc. (Gold Medalist), M.Ed., Ph.D. in Educational Leadership",
-      message: "Welcome to Your Public School! For over three decades, our endeavor has been to kindle the fire of curiosity, build ethical foundations, and foster excellence in every child. We nurture thinkers, innovators, and empathetic human beings who lead the world with confidence and compassion.",
+      principalName: "Principal, GCS",
+      qualification: "M.Sc., M.Ed., Educational Leadership",
+      message: "Welcome to Gidhaur Central School! Established in 2005 in Gidhaur, Jamui (Bihar), our endeavor has been to kindle the fire of curiosity, build ethical foundations, and foster excellence in every child under our core motto 'Duty • Devotion • Discipline'. We nurture thinkers, innovators, and empathetic human beings who lead the world with confidence and compassion.",
       photoUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=500&auto=format&fit=crop",
     },
   });
@@ -615,9 +615,9 @@ async function main() {
   await prisma.directorMessage.deleteMany();
   await prisma.directorMessage.create({
     data: {
-      directorName: "Shri Rajesh V. Verma",
+      directorName: "Director, GCS",
       designation: "Managing Director & Trustee",
-      message: "Education is not merely about accumulating degrees; it is the harmonious training of head, heart, and hands. Our vision is to provide 21st-century infrastructure while keeping timeless human values at the core of learning.",
+      message: "Education is not merely about accumulating degrees; it is the harmonious training of head, heart, and hands. Our vision at Gidhaur Central School is to provide quality infrastructure and holistic pedagogy while keeping timeless Indian values at the core of learning.",
       photoUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=500&auto=format&fit=crop",
     },
   });
@@ -633,7 +633,7 @@ async function main() {
         qualification: "Ph.D. in Physics, M.Sc., B.Ed.",
         experience: "18+ Years",
         photoUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop",
-        email: "arvind.physics@yourpublicschool.edu.in",
+        email: "arvind.physics@gidhaurcentralschool.com",
         order: 1,
       },
       {
@@ -643,7 +643,7 @@ async function main() {
         qualification: "M.Sc. Mathematics, B.Ed.",
         experience: "15+ Years",
         photoUrl: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?q=80&w=300&auto=format&fit=crop",
-        email: "meenakshi.math@yourpublicschool.edu.in",
+        email: "meenakshi.math@gidhaurcentralschool.com",
         order: 2,
       },
       {
@@ -653,7 +653,7 @@ async function main() {
         qualification: "M.A. English Literature, CELTA",
         experience: "12+ Years",
         photoUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop",
-        email: "david.robinson@yourpublicschool.edu.in",
+        email: "david.robinson@gidhaurcentralschool.com",
         order: 3,
       },
       {
@@ -663,7 +663,7 @@ async function main() {
         qualification: "M.A. Child Psychology, B.Ed.",
         experience: "14+ Years",
         photoUrl: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=300&auto=format&fit=crop",
-        email: "kavita.roy@yourpublicschool.edu.in",
+        email: "kavita.roy@gidhaurcentralschool.com",
         order: 4,
       },
     ],

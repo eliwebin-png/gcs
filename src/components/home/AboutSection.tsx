@@ -16,12 +16,12 @@ interface AboutSectionProps {
 
 export default function AboutSection({
   badge = "ABOUT OUR SCHOOL",
-  title = "Inspiring Excellence. Nurturing Tomorrow's Leaders.",
-  description = "At Your Public School, we believe every child is unique and has the potential to achieve greatness. Our holistic approach to education blends academics, co-curricular activities, and life skills to develop confident, compassionate, and responsible individuals.",
+  title = "Gidhaur Central School - Duty, Devotion & Discipline",
+  description = "At Gidhaur Central School, established in 2005 in Gidhaur, Jamui (Bihar), we believe in nurturing young minds with foundational academic excellence, moral integrity, and character building. Guided by our motto 'Duty • Devotion • Discipline', we prepare students for a bright and purposeful future.",
   imageUrl = "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1000&auto=format&fit=crop",
-  vision = "To be a leading institution that inspires and empowers students to shape the future.",
-  mission = "To provide quality education that fosters creativity, critical thinking and character.",
-  values = "Integrity, Respect, Excellence, Empathy and Responsibility guide everything we do.",
+  vision = "To cultivate intellectually vibrant, morally upright, and socially responsible citizens through accessible quality education.",
+  mission = "To provide an enriching learning environment that fosters academic curiosity, ethical values, and holistic physical development.",
+  values = "Duty, Devotion, Discipline, Integrity, and Compassion guide everything we do.",
 }: AboutSectionProps) {
   return (
     <section className="py-20 lg:py-28 bg-white overflow-hidden">
@@ -33,7 +33,7 @@ export default function AboutSection({
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
               <img
                 src={imageUrl}
-                alt="Students at Your Public School"
+                alt="Students at Gidhaur Central School"
                 className="w-full h-[420px] sm:h-[480px] object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>

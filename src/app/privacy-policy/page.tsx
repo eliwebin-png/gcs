@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
 
           <h2 className="text-xl font-bold text-slate-900">4. Contacting the Data Protection Officer</h2>
           <p>
-            If you have questions regarding our privacy practices or wish to review data submitted to our portal, please email <strong>privacy@yourpublicschool.edu.in</strong>.
+            If you have questions regarding our privacy practices or wish to review data submitted to our portal, please email <strong>privacy@gidhaurcentralschool.com</strong>.
           </p>
         </div>
       </main>

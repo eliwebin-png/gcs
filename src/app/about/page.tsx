@@ -64,7 +64,7 @@ export default async function AboutPage() {
                 {aboutSection?.title || "Inspiring Excellence. Nurturing Tomorrow's Leaders."}
               </h2>
               <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                {aboutSection?.description || "At Your Public School, we believe every child is unique and has the potential to achieve greatness. Our holistic approach to education blends academics, co-curricular activities, and life skills to develop confident, compassionate, and responsible individuals."}
+                {aboutSection?.description || "At Gidhaur Central School, established in 2005 in Gidhaur, Jamui (Bihar), we believe in nurturing young minds with foundational academic excellence, moral integrity, and character building. Guided by our motto 'Duty • Devotion • Discipline', we prepare students for a bright and purposeful future."}
               </p>
               <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
                 Established with a vision to provide world-class education rooted in traditional values, we have grown into one of the region's most esteemed institutions. Our faculty of over 150+ educators nurture students with care and modern teaching tools.

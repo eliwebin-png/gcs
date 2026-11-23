@@ -81,7 +81,7 @@ export default async function CareerPage() {
                     <span>Actively Hiring</span>
                   </span>
                   <a
-                    href={`mailto:${schoolInfo?.email || "careers@yourpublicschool.edu.in"}?subject=Application for ${pos.title}`}
+                    href={`mailto:${schoolInfo?.email || "careers@gidhaurcentralschool.com"}?subject=Application for ${pos.title}`}
                     className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors"
                   >
                     Apply via Email
@@ -96,7 +96,7 @@ export default async function CareerPage() {
             <h3 className="text-lg font-bold text-slate-900">Don't See Your Role Listed?</h3>
             <p className="text-xs text-slate-600 max-w-md mx-auto">
               We are always eager to meet outstanding educators and administrative professionals. Send your resume to{" "}
-              <strong className="text-blue-600">{schoolInfo?.email || "careers@yourpublicschool.edu.in"}</strong>.
+              <strong className="text-blue-600">{schoolInfo?.email || "careers@gidhaurcentralschool.com"}</strong>.
             </p>
           </div>
 

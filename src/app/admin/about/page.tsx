@@ -15,20 +15,20 @@ export default function AdminAboutPage() {
 
   // About form states
   const [badge, setBadge] = useState("ABOUT OUR SCHOOL");
-  const [title, setTitle] = useState("Inspiring Excellence. Nurturing Tomorrow's Leaders.");
+  const [title, setTitle] = useState("Gidhaur Central School - Duty, Devotion & Discipline");
   const [description, setDescription] = useState(
-    "At Your Public School, we believe every child is unique and has the potential to achieve greatness. Our holistic approach to education blends academics, co-curricular activities, and life skills."
+    "At Gidhaur Central School, established in 2005 in Gidhaur, Jamui (Bihar), we believe in nurturing young minds with foundational academic excellence, moral integrity, and character building."
   );
   const [imageUrl, setImageUrl] = useState("https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1000&auto=format&fit=crop");
-  const [vision, setVision] = useState("To be a leading institution that inspires and empowers students to shape the future.");
-  const [mission, setMission] = useState("To provide quality education that fosters creativity, critical thinking and character.");
-  const [values, setValues] = useState("Integrity, Respect, Excellence, Empathy and Responsibility guide everything we do.");
+  const [vision, setVision] = useState("To cultivate intellectually vibrant, morally upright, and socially responsible citizens through accessible quality education.");
+  const [mission, setMission] = useState("To provide an enriching learning environment that fosters academic curiosity, ethical values, and holistic physical development.");
+  const [values, setValues] = useState("Duty, Devotion, Discipline, Integrity, and Compassion guide everything we do.");
 
   // Principal Message states
-  const [principalName, setPrincipalName] = useState("Dr. Sunita Sharma");
-  const [principalQual, setPrincipalQual] = useState("M.Sc., M.Ed., Ph.D. in Educational Leadership");
+  const [principalName, setPrincipalName] = useState("Principal, GCS");
+  const [principalQual, setPrincipalQual] = useState("M.Sc., M.Ed., Educational Leadership");
   const [principalMsg, setPrincipalMsg] = useState(
-    "Welcome to Your Public School! For over three decades, our endeavor has been to kindle the fire of curiosity, build ethical foundations, and foster excellence in every child."
+    "Welcome to Gidhaur Central School! Established in 2005 in Gidhaur, Jamui (Bihar), our endeavor has been to kindle the fire of curiosity, build ethical foundations, and foster excellence in every child under our core motto 'Duty • Devotion • Discipline'."
   );
   const [principalPhoto, setPrincipalPhoto] = useState("https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=500&auto=format&fit=crop");
 

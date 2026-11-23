@@ -11,23 +11,23 @@ export default function AdminSettingsPage() {
   // States
   const [showHeroStats, setShowHeroStats] = useState(true);
   const [isTogglingHeroStats, setIsTogglingHeroStats] = useState(false);
-  const [schoolName, setSchoolName] = useState("YOUR PUBLIC SCHOOL");
-  const [tagline, setTagline] = useState("Nurturing Minds, Building Futures");
-  const [phone1, setPhone1] = useState("+91 98765 43210");
-  const [phone2, setPhone2] = useState("+91 11223 45678");
-  const [email, setEmail] = useState("info@yourpublicschool.edu.in");
-  const [admissionEmail, setAdmissionEmail] = useState("admissions@yourpublicschool.edu.in");
-  const [address, setAddress] = useState("123 Education Avenue, Knowledge City, New Delhi - 110001");
-  const [workingHours, setWorkingHours] = useState("Mon - Sat: 8:00 AM - 4:00 PM");
-  const [affiliationBoard, setAffiliationBoard] = useState("CBSE Affiliated");
-  const [affiliationNo, setAffiliationNo] = useState("CBSE/AFF/2024/983421");
-  const [schoolCode, setSchoolCode] = useState("84920");
+  const [schoolName, setSchoolName] = useState("Gidhaur Central School");
+  const [tagline, setTagline] = useState("Duty • Devotion • Discipline");
+  const [phone1, setPhone1] = useState("+91 8409254393");
+  const [phone2, setPhone2] = useState("+91 9934485443");
+  const [email, setEmail] = useState("info@gidhaurcentralschool.com");
+  const [admissionEmail, setAdmissionEmail] = useState("admissions@gidhaurcentralschool.com");
+  const [address, setAddress] = useState("Vill- Gidhaur, Post- Gidhaur, Dist- Jamui - Pin: 811305, Jamui, Bihar");
+  const [workingHours, setWorkingHours] = useState("Mon - Sat: 8:00 AM - 3:30 PM");
+  const [affiliationBoard, setAffiliationBoard] = useState("Reg No. JAM/PR-29 (ESTD- 2005)");
+  const [affiliationNo, setAffiliationNo] = useState("JAM/PR-29");
+  const [schoolCode, setSchoolCode] = useState("JAM-29");
   const [facebookUrl, setFacebookUrl] = useState("https://facebook.com");
   const [instagramUrl, setInstagramUrl] = useState("https://instagram.com");
   const [youtubeUrl, setYoutubeUrl] = useState("https://youtube.com");
   const [linkedinUrl, setLinkedinUrl] = useState("https://linkedin.com");
   const [twitterUrl, setTwitterUrl] = useState("https://twitter.com");
-  const [whatsappNumber, setWhatsappNumber] = useState("+919876543210");
+  const [whatsappNumber, setWhatsappNumber] = useState("+918409254393");
 
   useEffect(() => {
     fetch("/api/admin/settings")

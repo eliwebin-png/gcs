@@ -38,7 +38,7 @@ export default function TermsPage() {
 
           <h2 className="text-xl font-bold text-slate-900">3. Intellectual Property</h2>
           <p>
-            All logos, photographs, badges, syllabus documents, and digital media displayed on this website are the intellectual property of Your Public School and may not be reproduced without explicit written consent.
+            All logos, photographs, badges, syllabus documents, and digital media displayed on this website are the intellectual property of Gidhaur Central School and may not be reproduced without explicit written consent.
           </p>
         </div>
       </main>
