@@ -122,7 +122,12 @@ export default async function HomePage() {
 
         {/* 9. Tri-Section: Achievements | Testimonials | News & Events */}
         <TriSection
-          achievements={achievements}
+          achievements={achievements.filter(
+            (a) =>
+              a.category !== "Board Toppers" &&
+              !a.studentName &&
+              !(a.description && a.description.startsWith("PHOTO:"))
+          )}
           testimonials={testimonials}
           newsList={newsList}
         />

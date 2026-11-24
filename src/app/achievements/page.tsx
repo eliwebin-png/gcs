@@ -137,13 +137,21 @@ export default async function AchievementsPage() {
       rank: a.iconName || "School Topper",
       photoUrl:
         a.description && a.description.startsWith("PHOTO:")
-          ? a.description.replace("PHOTO:", "")
+          ? a.description.replace("PHOTO:", "").trim()
           : "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=300&auto=format&fit=crop",
       tag: a.category === "Board Toppers" ? "CBSE Topper" : a.category,
     }));
 
   const boardToppers =
     customDbToppers.length > 0 ? customDbToppers : defaultBoardToppers;
+
+  // Institutional / School Milestones (Exclude individual student toppers)
+  const institutionalAchievements = achievements.filter(
+    (a) =>
+      a.category !== "Board Toppers" &&
+      !a.studentName &&
+      !(a.description && a.description.startsWith("PHOTO:"))
+  );
 
   // Default student voices if testimonials empty
   const defaultStudentVoices = [
@@ -280,8 +288,12 @@ export default async function AchievementsPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {achievements.map((ach) => {
+              {institutionalAchievements.map((ach) => {
                 const IconComp = getAchIcon(ach.iconName);
+                const hasPhoto = Boolean(ach.description && ach.description.startsWith("PHOTO:"));
+                const photoUrl = hasPhoto && ach.description ? ach.description.replace("PHOTO:", "").trim() : null;
+                const cleanDescription = hasPhoto ? "" : (ach.description || "");
+
                 return (
                   <div
                     key={ach.id}
@@ -304,9 +316,19 @@ export default async function AchievementsPage() {
                         {ach.subtitle}
                       </p>
 
-                      {ach.description && (
+                      {photoUrl && (
+                        <div className="w-full h-36 rounded-2xl overflow-hidden my-3 bg-slate-100 border border-slate-200">
+                          <img
+                            src={photoUrl}
+                            alt={ach.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                        </div>
+                      )}
+
+                      {cleanDescription && (
                         <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                          {ach.description}
+                          {cleanDescription}
                         </p>
                       )}
                     </div>
